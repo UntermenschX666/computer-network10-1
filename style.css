@@ -4,3 +4,28 @@
     font-size: 120px;
 
 }
+
+#today {
+    background-color: darkseagreen;
+}
+
+.calendar {
+    width: 400px;
+    height: 400px;
+    align-content: center;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+
+
+.calendar td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.calendar th {
+    font-weight: bold;
+    background-color: gray;
+}
+
