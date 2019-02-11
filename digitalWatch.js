@@ -1,4 +1,4 @@
-var watch = document.getElementById("digital_watch")
+var watch = document.getElementById("digital_watch");
 
 function digitalWatch(){
 

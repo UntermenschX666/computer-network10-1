@@ -1,3 +1,5 @@
+var date = new Date();
+
 function getDay(date) {
     var day = date.getDay();
     if (day == 0) day = 7;
@@ -5,10 +7,19 @@ function getDay(date) {
 }
 
 function createCalendar(id) {
+
     var elem = document.getElementById(id);
     var date = new Date();
+    var month = date.getMonth() + 1;
+    if(month < 10)
+        month = "0" + month
+
+    var captionString = month + "." + date.getFullYear();
+    var caption = document.getElementById("date_today");
+    caption.textContent = captionString;
+
     var tempDate = new Date(date.getFullYear(), date.getMonth());
-    var table = '<table class="calendar"><tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr><tr>';
+    var table = '<tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr><tr>';
 
     // Заполняем пустотой до первого дня недели месяца
     for (var i = 0; i < getDay(tempDate); i++) {
@@ -40,7 +51,7 @@ function createCalendar(id) {
     }
 
     // Закрыть таблицу
-    table += '</tr></table>';
+    table += '</tr>';
 
     elem.innerHTML = table;
 }
